@@ -8,5 +8,10 @@ public class Main {
 
         // Mostrar detalles del libro
         libro1.mostrarDetalles();
+        CuentaBancaria cuenta = new CuentaBancaria("Maria", 500);
+        cuenta.depositar(200);
+        System.out.println(cuenta.getSaldo()); // Debería ser 700
+        cuenta.retirar(1000); // Debería mostrar error de fondos insuficientes
+
     }
 }
