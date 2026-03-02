@@ -2,11 +2,14 @@ package com.example;
 
 public class CuentaBancaria {
     private String titular;
-    private Double saldo;
+    private double saldo;
 
-    public CuentaBancaria(String titular, Double saldoInicial){
-        if (saldoInicial < 0){
-            saldoInicial = 0;
+    public CuentaBancaria(String titular, double saldoInicial) {
+        this.titular = titular;
+        if (saldoInicial < 0) {
+            this.saldo = 0;
+        } else {
+            this.saldo = saldoInicial;
         }
     }
 
@@ -14,7 +17,7 @@ public class CuentaBancaria {
         return titular;
     }
     
-    public void setTitular(String titulo) {
+    public void setTitular(String titular) {
         this.titular = titular;
     }
 
@@ -29,10 +32,17 @@ public class CuentaBancaria {
 
     }
 
-    public void retirar(double cantidad){
-        if (cantidad > 0){
-            saldo = saldo - cantidad;
+    public void retirar(double cantidad) {
+        if (cantidad > 0) {
+            if (saldo >= cantidad) {
+                saldo -= cantidad;
+            } else {
+                System.out.println("Saldo insuficiente.");
+            }
+        } else {
+            System.out.println("Su retiro debe ser mayor a 0.");
         }
     }
+    
 
 }

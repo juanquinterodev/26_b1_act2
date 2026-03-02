@@ -7,8 +7,8 @@ public class Libro {
     private int paginas;
 
     public Libro() {
-        this.titulo = "desconocido";
-        this.autor = "anonimo";
+        this.titulo = "Desconocido";
+        this.autor = "Anónimo";
         this.paginas = 0;
     }
 
